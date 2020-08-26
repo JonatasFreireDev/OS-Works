@@ -1,0 +1,17 @@
+mat-toolbar {
+  height: 70px;
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  mat-slide-toggle {
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

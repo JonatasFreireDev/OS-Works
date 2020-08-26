@@ -1,0 +1,19 @@
+.charts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+
+    canvas {
+      max-height: 350px;
+      max-width: 350px;
+    }
+  }
+}

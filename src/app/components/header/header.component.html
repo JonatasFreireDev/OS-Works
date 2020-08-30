@@ -1,9 +1,6 @@
 <mat-toolbar>
-  <span>Os Works</span>
+  <span>{{ title || "Page" }}</span>
   <span class="example-spacer"></span>
-  <mat-slide-toggle color="primary" (click)="themeService.setDark()"
-    >Dark Theme</mat-slide-toggle
-  >
 </mat-toolbar>
 <div *ngIf="loadingService.getLoading()">
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>

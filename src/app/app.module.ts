@@ -12,9 +12,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeaderComponent,
+    NavBarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

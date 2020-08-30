@@ -6,8 +6,20 @@ body {
 }
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 * {
   outline: none;
+}
+
+button:hover,
+a:hover,
+mat-icon:hover {
+  cursor: pointer;
+}
+
+:root {
+  --main-color: rgb(196, 196, 196);
 }

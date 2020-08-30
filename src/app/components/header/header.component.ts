@@ -1,5 +1,5 @@
 import { ThemeService } from './../../services/theme/theme.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoadingService } from './../../services/loading/loading.service';
 
 @Component({
@@ -8,10 +8,9 @@ import { LoadingService } from './../../services/loading/loading.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(
-    public loadingService: LoadingService,
-    public themeService: ThemeService
-  ) {}
+  @Input() title: string;
+
+  constructor(public loadingService: LoadingService) {}
 
   ngOnInit(): void {}
 }

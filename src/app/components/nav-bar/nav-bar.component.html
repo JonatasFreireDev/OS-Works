@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="logo">
+    <img src="../../../assets/logo.png" />
+  </div>
+  <span class="example-spacer"></span>
+  <hr />
+  <a routerLink="/dashboard">
+    <mat-icon fontIcon="50">dashboard</mat-icon>
+  </a>
+  <hr />
+  <a routerLink="/dashboard">
+    <mat-icon>list</mat-icon>
+  </a>
+  <hr />
+  <a routerLink="/teste">
+    <mat-icon>post_add</mat-icon>
+  </a>
+  <hr />
+  <mat-slide-toggle
+    color="primary"
+    (click)="themeService.setDark()"
+  ></mat-slide-toggle>
+</div>

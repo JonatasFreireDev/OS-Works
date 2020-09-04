@@ -13,22 +13,6 @@ $dark-accent: mat-palette($mat-amber, A200, A100, A400);
 $dark-warn: mat-palette($mat-deep-orange);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
-:host {
-  div {
-    margin-left: 0px;
-  }
-}
-
-button {
-  border: none;
-  background: none;
-  margin: 5px;
-}
-
-@media only screen and (min-width: 700px) {
-  :host {
-    div {
-      margin-left: 100px;
-    }
-  }
+.container {
+  height: 100%;
 }

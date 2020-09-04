@@ -2,20 +2,20 @@
   <div class="logo">
     <img src="../../../assets/logo.png" />
   </div>
-  <span class="example-spacer"></span>
-  <hr />
+  <span class="spacer"></span>
+
   <a routerLink="/dashboard">
     <mat-icon fontIcon="50">dashboard</mat-icon>
   </a>
-  <hr />
-  <a routerLink="/dashboard">
+
+  <a routerLink="/listOs">
     <mat-icon>list</mat-icon>
   </a>
-  <hr />
-  <a routerLink="/teste">
+
+  <a routerLink="/createOs">
     <mat-icon>post_add</mat-icon>
   </a>
-  <hr />
+
   <mat-slide-toggle
     color="primary"
     (click)="themeService.setDark()"

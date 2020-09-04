@@ -5,14 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//add
+//others
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeaderComponent } from './components/header/header.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+//forms
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+//components
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CreateServiceComponent } from './pages/create-service/create-service.component';
+import { ListServiceComponent } from './pages/list-service/list-service.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +32,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     DashboardComponent,
     HeaderComponent,
     NavBarComponent,
+    CreateServiceComponent,
+    ListServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +43,12 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     MatIconModule,
     MatProgressBarModule,
     MatSlideToggleModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatSidenavModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

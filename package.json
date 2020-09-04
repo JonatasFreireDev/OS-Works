@@ -30,6 +30,7 @@
     "@angular-devkit/build-angular": "~0.1000.7",
     "@angular/cli": "~10.0.7",
     "@angular/compiler-cli": "~10.0.11",
+    "@types/angular": "^1.7.3",
     "@types/chart.js": "^2.9.24",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

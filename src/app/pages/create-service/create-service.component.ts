@@ -1,5 +1,8 @@
+import { LoadingService } from './../../services/loading/loading.service';
+import { ServiceOrdersService } from './../../services/service-orders/service-orders.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { IServiceOrder } from '../../model/IServiceOrder';
 
 @Component({
   selector: 'app-create-service',
@@ -15,24 +18,38 @@ export class CreateServiceComponent implements OnInit {
   // });
   orderForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private api: ServiceOrdersService,
+    public loading: LoadingService
+  ) {}
 
   ngOnInit(): void {
     this.orderForm = this.fb.group({
-      problem: ['', Validators.required],
       name: ['', [Validators.maxLength(55), Validators.required]],
       email: ['', [Validators.email, Validators.required]],
       number: ['', [Validators.required, Validators.max(20)]],
+      problem: ['', Validators.required],
       description: ['', [Validators.maxLength(256)]],
+      status: 'open',
+      dateOpend: new Date().toLocaleDateString(),
     });
   }
 
   onSubmit() {
-    console.log(JSON.stringify(this.orderForm.value));
-  }
-
-  get number() {
-    return this.orderForm.get('number');
+    this.loading.setLoading();
+    this.api.createServiceOrder(this.orderForm.value).subscribe(
+      (result) => {
+        this.orderForm.reset();
+        window.location.reload();
+      },
+      (err) => {
+        this.loading.setLoading();
+        setTimeout(() => {
+          alert(err);
+        }, 500);
+      }
+    );
   }
 }
 

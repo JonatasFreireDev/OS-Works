@@ -55,9 +55,13 @@
       type="submit"
       mat-raised-button
       color="primary"
-      [disabled]="!orderForm.valid"
+      [disabled]="!orderForm.valid || loading.getLoading()"
     >
-      Create Order
+      {{
+        !orderForm.valid || loading.getLoading()
+          ? "Carregando..."
+          : "Create Order"
+      }}
     </button>
   </form>
 </div>

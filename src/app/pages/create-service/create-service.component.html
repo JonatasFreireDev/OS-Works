@@ -4,9 +4,11 @@
     <mat-form-field>
       <mat-label>Tipo de serviço</mat-label>
       <mat-select formControlName="problem" disableRipple required>
-        <mat-option value="1">Equipamento quebrado</mat-option>
-        <mat-option value="2">Instalação</mat-option>
-        <mat-option value="3">Option 3</mat-option>
+        <mat-option value="Equipamento quebrado"
+          >Equipamento quebrado</mat-option
+        >
+        <mat-option value="Instalacao">Instalação</mat-option>
+        <mat-option value="Devolucao">Devolução</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -58,7 +60,9 @@
       [disabled]="!orderForm.valid || loading.getLoading()"
     >
       {{
-        !orderForm.valid || loading.getLoading()
+        !orderForm.valid
+          ? "Inform Values"
+          : loading.getLoading()
           ? "Carregando..."
           : "Create Order"
       }}

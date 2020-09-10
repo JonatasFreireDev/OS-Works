@@ -1,3 +1,4 @@
+import { NotifierService } from './../../services/notifier/notifier.service';
 import { LoadingService } from './../../services/loading/loading.service';
 import { ServiceOrdersService } from './../../services/service-orders/service-orders.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,9 +19,15 @@ export class CreateServiceComponent implements OnInit {
   // });
   orderForm: FormGroup;
 
+  snackConf = {
+    horizontalPosition: 'end',
+    verticalPosition: 'top',
+  };
+
   constructor(
     private fb: FormBuilder,
     private api: ServiceOrdersService,
+    private notifier: NotifierService,
     public loading: LoadingService
   ) {}
 
@@ -28,7 +35,7 @@ export class CreateServiceComponent implements OnInit {
     this.orderForm = this.fb.group({
       name: ['', [Validators.maxLength(55), Validators.required]],
       email: ['', [Validators.email, Validators.required]],
-      number: ['', [Validators.required, Validators.max(20)]],
+      number: ['', [Validators.required]],
       problem: ['', Validators.required],
       description: ['', [Validators.maxLength(256)]],
       status: 'open',
@@ -40,14 +47,16 @@ export class CreateServiceComponent implements OnInit {
     this.loading.setLoading();
     this.api.createServiceOrder(this.orderForm.value).subscribe(
       (result) => {
+        this.notifier.sucess('Criado com sucesso');
         this.orderForm.reset();
-        window.location.reload();
+        this.loading.setLoading();
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 5000);
       },
       (err) => {
         this.loading.setLoading();
-        setTimeout(() => {
-          alert(err);
-        }, 500);
+        this.notifier.error(err);
       }
     );
   }

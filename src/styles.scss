@@ -23,3 +23,13 @@ mat-icon:hover {
 :root {
   --main-color: rgb(196, 196, 196);
 }
+
+.messageSuccess {
+  background: green !important;
+  color: white !important;
+}
+
+.messageError {
+  background: red !important;
+  color: white !important;
+}

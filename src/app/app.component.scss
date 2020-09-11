@@ -14,5 +14,29 @@ $dark-warn: mat-palette($mat-deep-orange);
 $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .container {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 100%;
+
+  app-nav-bar {
+    position: static;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .container {
+    position: relative;
+    flex-direction: row;
+
+    app-nav-bar {
+      position: fixed;
+    }
+
+    router-outlet {
+      position: relative;
+      margin-left: 70px;
+    }
+  }
 }

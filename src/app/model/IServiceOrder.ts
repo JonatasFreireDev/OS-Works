@@ -1,4 +1,5 @@
 export interface IServiceOrder {
+  id: string;
   problem: string;
   name: string;
   email: string;

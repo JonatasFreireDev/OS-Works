@@ -1,1 +1,24 @@
 <app-header title="List Service Order"></app-header>
+<div class="container">
+  <mat-card
+    *ngFor="let teste of ordersList"
+    [class.open]="teste.status == 'open'"
+  >
+    <mat-card-title>
+      {{ teste.problem }}
+      <span></span>
+      {{ teste.status }}
+    </mat-card-title>
+    <mat-card-content>
+      <p>{{ teste.dateOpend }}</p>
+      <p>Name: {{ teste.name }}</p>
+      <p>Email: {{ teste.email }}</p>
+      <p>Description: {{ teste.description }}</p>
+    </mat-card-content>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
+
+  <div *ngIf="!ordersList && !loading.getLoading()" class="empty">
+    <h1>Empty</h1>
+  </div>
+</div>

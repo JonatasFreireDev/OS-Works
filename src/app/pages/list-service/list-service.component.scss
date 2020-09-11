@@ -1,0 +1,45 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  flex-flow: wrap;
+
+  mat-card {
+    width: 400px;
+    height: 200px;
+    margin: 20px;
+    transition: all 0.5s;
+
+    &.open {
+      background: rgb(253, 207, 207);
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    mat-card-title {
+      display: flex;
+
+      span {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  .empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+
+    h1 {
+      opacity: 0.5;
+    }
+  }
+}

@@ -21,7 +21,6 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
   app-nav-bar {
     position: static;
-    height: 100%;
   }
 }
 
@@ -32,6 +31,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
     app-nav-bar {
       position: fixed;
+      height: 100%;
     }
 
     router-outlet {
